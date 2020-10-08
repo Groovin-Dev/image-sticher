@@ -41,11 +41,13 @@ def merge_images(dir):
         final_image.paste(img, (pre_w, pre_h, pre_w+max_width, pre_h + img.size[1]))
         pre_h += img.size[1]
     
-    final_image.save('stiched.png', quality=100)
-    final_image.show()
+    final_image.save(dir + '/stiched.png', quality=100)
+    #final_image.show()
 
-    if path.exists(path.abspath('./stich_temp')):
-        rmtree(path.abspath('./stich_temp'))
+    print('Images stiched!')
+
+    if path.exists(path.abspath(dir + '/stich_temp')):
+        rmtree(path.abspath(dir + '/stich_temp'))
 
 def main():
     image_dir = input("What directory to you want to get the images from?: ")
